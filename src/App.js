@@ -1,43 +1,13 @@
 import React from 'react';
-import Text from './components/Text';
-import { useDispatch, useSelector } from 'react-redux';
+import './style.scss'; 
+import Counter from './Counter';
 
-
-function App() {
-
-  const counter = useSelector(state => state)
-
-
-  const dispatch = useDispatch()
-
-  function plus(){
-    dispatch({
-      type: "plus"
-    })
-  }
-  function minus(){
-    dispatch({
-      type: "minus"
-    })
-  }
-  function reset(){
-    dispatch({
-      type: "reset"
-    })
-  }
-
+const App = () => {
   return (
     <div className="App">
-      <div>
-        {counter}
-      </div>
-      <div>
-        <button onClick={plus}>+</button>
-        <button onClick={minus}>-</button>
-        <button onClick={reset}>reset</button>
-      </div>
+      <Counter />
     </div>
   );
-}
+};
 
 export default App;
